@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sewa Parkir</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: cornsilk;
+        }
+
+        header {
+            background-color: lightsalmon;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header video {
+            width: 100%; /* Sesuaikan lebar video */
+            max-width: 300px; /* Sesuaikan maksimum lebar video */
+            margin-bottom: 10px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: lightsalmon;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .parking-container {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select {
+            padding: 8px;
+            margin-bottom: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: rgb(235, 111, 95);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        #reservationInfo {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video controls>
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Sewa Parkir</h1>
+    </header>
+    <div class="container">
+        <div class="parking-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="vehicle">Kendaraan:</label>
+            <select id="vehicle">
+                <option value="" disabled selected>Pilih Kendaraan</option>
+                <option value="Mobil">Mobil</option>
+                <option value="Motor">Motor</option>
+                <option value="Sepeda">Sepeda</option>
+                <option value="Truck">Truck</option>
+            </select>
+
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date">
+
+            <label for="hours">Jam:</label>
+            <input type="number" id="hours" placeholder="Enter hours">
+
+            <button onclick="reserveParking()">Sewa Parkir</button>
+            <button onclick="clearForm()">Clear</button>
+            <button onclick="exitPage()">Exit</button>
+            <div id="reservationInfo"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
